@@ -11,6 +11,9 @@ from dotenv import load_dotenv
 
 from game.cog import OfficerLawbreakerCog
 
+# 1. IMPORT IT HERE (at the top with other imports)
+from keep_alive import keep_alive
+
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 
@@ -43,4 +46,7 @@ if __name__ == "__main__":
             "DISCORD_TOKEN is not set. Copy .env.example to .env and paste your "
             "bot token in, then run this again."
         )
+    # 2. Start the web server here
+    keep_alive()
+
     asyncio.run(main())
